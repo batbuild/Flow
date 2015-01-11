@@ -7,7 +7,7 @@ namespace Flow
 	internal class Timer : Periodic, ITimer
 	{
 		/// <inheritdoc />
-		public DateTime TimeEnds { get; private set; }
+		public TimeSpan TimeEnds { get; private set; }
 
 		internal Timer(IKernel kernel, TimeSpan span)
 			: base(kernel, span)

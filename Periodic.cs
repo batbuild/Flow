@@ -11,7 +11,7 @@ namespace Flow
 		public event TransientHandler Elapsed;
 
 		/// <inheritdoc />
-		public DateTime TimeStarted { get; set; }
+		public TimeSpan TimeStarted { get; set; }
 
 		/// <inheritdoc />
 		public TimeSpan Interval { get; set; }
@@ -37,6 +37,6 @@ namespace Flow
 			return true;
 		}
 
-		DateTime _expires;
+		TimeSpan _expires;
 	}
 }

@@ -21,6 +21,17 @@ namespace Flow
 		}
 
 		/// <summary>
+		/// Create a new Kernel and Factory that use a custom time frame
+		/// </summary>
+		/// <returns>
+		/// The kernel.
+		/// </returns>
+		public static IKernel NewKernel(ITimeFrame timeFrame)
+		{
+			return NewFactory(timeFrame).Kernel;
+		}
+
+		/// <summary>
 		/// Create a new Kernel and Factory
 		/// </summary>
 		/// <returns>
@@ -28,7 +39,23 @@ namespace Flow
 		/// </returns>
 		public static IFactory NewFactory()
 		{
-			var kernel = new Kernel();
+			return NewFactoryInternal(new TimeFrame());
+		}
+
+		/// <summary>
+		/// Create a new Kernel and Factory that use a custom time frame
+		/// </summary>
+		/// <returns>
+		/// The factory.
+		/// </returns>
+		public static IFactory NewFactory(ITimeFrame timeFrame)
+		{
+			return NewFactoryInternal(timeFrame);
+		}
+
+		private static IFactory NewFactoryInternal(ITimeFrame timeFrame)
+		{
+			var kernel = new Kernel(timeFrame);
 			var factory = new Factory();
 
 			kernel.Factory = factory;

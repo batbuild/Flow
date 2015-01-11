@@ -22,7 +22,7 @@ namespace Flow
 		/// <value>
 		/// The time when this instance was started.
 		/// </value>
-		DateTime TimeStarted { get; }
+		TimeSpan TimeStarted { get; }
 
 		/// <summary>
 		/// Gets or sets the interval. Successive Elapsed events will have not less than this TimeSpan between being fired.

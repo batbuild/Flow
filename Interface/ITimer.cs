@@ -16,6 +16,6 @@ namespace Flow
 		/// <value>
 		/// The soonest time that the timer will elapse
 		/// </value>
-		DateTime TimeEnds { get; }
+		TimeSpan TimeEnds { get; }
 	}
 }

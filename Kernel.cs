@@ -15,11 +15,9 @@ namespace Flow
 		/// <inheritdoc />
 		public ITimeFrame Time { get { return _time; } }
 
-		internal Kernel()
+		internal Kernel(ITimeFrame timeFrame)
 		{
-			_time.Now = DateTime.Now;
-			_time.Last = _time.Now;
-			_time.Delta = TimeSpan.FromSeconds(0);
+			_time = timeFrame;
 		}
 
 		/// <inheritdoc />
@@ -36,13 +34,9 @@ namespace Flow
 
 		void StepTime()
 		{
-			var now = DateTime.Now;
-
-			_time.Last = _time.Now;
-			_time.Delta = now - _time.Last;
-			_time.Now = now;
+			_time.Step();
 		}
 
-		private readonly TimeFrame _time = new TimeFrame();
+		private readonly ITimeFrame _time;
 	}
 }

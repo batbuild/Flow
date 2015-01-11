@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using NUnit.Framework;
 using Flow;
 
@@ -15,7 +16,7 @@ namespace TestFlow
 			var timer = kernel.Factory.NewTimer(TimeSpan.FromSeconds(span));
 
 			var elapsed = false;
-			DateTime when = DateTime.Now;
+			TimeSpan when = TimeSpan.FromSeconds(0);
 
 			timer.Elapsed += (sender) => 
 			{
@@ -68,7 +69,24 @@ namespace TestFlow
 			Assert.AreEqual(result, future.HasTimedOut);
 		}
 
-		DateTime RunKernel(IKernel kernel, TimeSpan span)
+		[TestCase(1f, 0.5f, true)]
+		[TestCase(1f, 1.5f, false)]
+		public void TestResumeAfter(float duration, float runTime, bool result)
+		{
+			var kernel = Create.NewKernel();
+			var coroutine = kernel.Factory.NewCoroutine(Coro1, duration);
+
+			RunKernel(kernel, TimeSpan.FromSeconds(runTime));
+
+			Assert.AreEqual(result, coroutine.Active);
+		}
+
+		IEnumerator<object> Coro1(IGenerator self, float duraiton)
+		{
+			yield return self.ResumeAfter(TimeSpan.FromSeconds(1));
+		}
+
+		TimeSpan RunKernel(IKernel kernel, TimeSpan span)
 		{
 			var start = kernel.Time.Now;
 			var end = start + span;

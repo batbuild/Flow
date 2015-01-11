@@ -10,20 +10,20 @@ namespace Flow
 	public interface ITimeFrame
 	{
 		/// <summary>
-		/// Gets the caonical time of the last update.
+		/// Gets the elapsed time at the last update since this time frame started.
 		/// </summary>
 		/// <value>
-		/// The canonical time that the last update was executed at.
+		/// The elapsed time that the last update was executed at.
 		/// </value>
-		DateTime Last { get; }
+		TimeSpan Last { get; }
 
 		/// <summary>
-		/// Gets the canonical time of the current update. This does not change as the update is being performed.
+		/// Gets the elapsed time since this time frame started. This does not change as the update is being performed.
 		/// </summary>
 		/// <value>
-		/// The canonical time of the current update. This does not change as the update is being performed.
+		/// The elapsed time since this time frame started. This does not change as the update is being performed.
 		/// </value>
-		DateTime Now { get; }
+		TimeSpan Now { get; }
 
 		/// <summary>
 		/// Gets the delta time to use for this update. Note that (Now - Last) may not always be equal to Delta
@@ -32,5 +32,7 @@ namespace Flow
 		/// The delta time to use for this update.
 		/// </value>
 		TimeSpan Delta { get; }
+
+		void Step();
 	}
 }
