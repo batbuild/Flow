@@ -93,9 +93,9 @@ Target "AndroidPack" (fun _ ->
             ToolPath = nugetPath
             Summary = info.Description            
             Tags = "Coroutine library C# for Android"           
-            PublishUrl = getBuildParamOrDefault "nugetrepo" ""
-            AccessKey = getBuildParamOrDefault "nugetkey" ""            
-            Publish = hasBuildParam "nugetkey"  
+            AccessKey = getBuildParamOrDefault "nugetkey" ""
+            Publish = hasBuildParam "nugetkey"
+            PublishUrl = getBuildParamOrDefault "nugetUrl" ""
             }) 
             "nuget/Flow.Android.nuspec"
 )
