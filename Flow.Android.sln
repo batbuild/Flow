@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flow", "Flow.csproj", "{C9F3733E-7E0D-45B9-ACC0-7B83644D5D60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFlow", "TestFlow\TestFlow.csproj", "{358AA530-E4D3-48EC-9978-D2FCB5881552}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{ADD6C20D-3207-44A7-B5BB-356579555078}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6A9D8C3D-A075-47C3-B5F6-E2CEA6CED83C}"
+	ProjectSection(SolutionItems) = preProject
+		build.cmd = build.cmd
+		completeBuild.fsx = completeBuild.fsx
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flow.Android", "Flow.Android.csproj", "{FB25B23A-8719-48CD-928F-CE80402225EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9F3733E-7E0D-45B9-ACC0-7B83644D5D60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9F3733E-7E0D-45B9-ACC0-7B83644D5D60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9F3733E-7E0D-45B9-ACC0-7B83644D5D60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9F3733E-7E0D-45B9-ACC0-7B83644D5D60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{358AA530-E4D3-48EC-9978-D2FCB5881552}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{358AA530-E4D3-48EC-9978-D2FCB5881552}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{358AA530-E4D3-48EC-9978-D2FCB5881552}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{358AA530-E4D3-48EC-9978-D2FCB5881552}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB25B23A-8719-48CD-928F-CE80402225EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB25B23A-8719-48CD-928F-CE80402225EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB25B23A-8719-48CD-928F-CE80402225EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB25B23A-8719-48CD-928F-CE80402225EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
